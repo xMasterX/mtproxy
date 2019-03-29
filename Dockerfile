@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.7
 
 # Uncomment if local sources
 # COPY ./MTProxy /mtproxy/sources
