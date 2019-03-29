@@ -23,8 +23,8 @@ LABEL maintainer="Author:Alex Doe - Editions by MX" \
 
 RUN apk add curl \
   && apk update \
-  && apk upgrade apk
-  #&& ln -s /usr/lib/libcrypto.so.43 /usr/lib/libcrypto.so.1.1
+  && apk upgrade apk \
+  && ln -s /usr/lib/libcrypto.so.43 /usr/lib/libcrypto.so.1.0.0
   # alpine:3.7 will need symlink to libcrypto.so.42
 
 WORKDIR /mtproxy
