@@ -18,7 +18,7 @@ RUN apk add --no-cache --virtual .build-deps \
     # && apk del .build-deps
 
 FROM alpine:3.6
-LABEL maintainer="Alex Doe <alex@doe.sh>" \
+LABEL maintainer="Author:Alex Doe - Editions by MX" \
       description="Telegram Messenger MTProto zero-configuration proxy server."
 
 RUN apk add --no-cache curl \
@@ -33,12 +33,12 @@ COPY --from=0 /mtproxy/sources/objs/bin/mtproto-proxy .
 COPY docker-entrypoint.sh /
 
 VOLUME /data
-EXPOSE 2398 443
+EXPOSE 2398 8843
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD [ \
   "--port", "2398", \
-  "--http-ports", "443", \
+  "--http-ports", "8843", \
   "--slaves", "2", \
   "--max-special-connections", "60000", \
   "--allow-skip-dh" \
