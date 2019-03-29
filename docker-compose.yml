@@ -11,7 +11,7 @@ services:
     #   - OVERRIDE=SOME
     #   - VARIABLES=HERE
     volumes:
-      - ./config:/data
+      - proxy-config:/data
     ports:
       - "2398:2398"
       - "8843:8843"
