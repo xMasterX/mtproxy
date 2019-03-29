@@ -17,14 +17,14 @@ RUN apk add --virtual .build-deps \
     # && apk add --virtual .rundeps libcrypto1.0 \
     # && apk del .build-deps
 
-FROM alpine:3.9
+FROM alpine:3.7
 LABEL maintainer="Author:Alex Doe - Editions by MX" \
       description="Telegram Messenger MTProto zero-configuration proxy server."
 
 RUN apk add curl \
   && apk update \
   && apk upgrade apk \
-  && ln -s /usr/lib/libcrypto.so.43 /usr/lib/libcrypto.so.1.0.0
+  && ln -s /usr/lib/libcrypto.so.42 /usr/lib/libcrypto.so.1.0.0
   # alpine:3.7 will need symlink to libcrypto.so.42
 
 WORKDIR /mtproxy
